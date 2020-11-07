@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DOCUMENT date="07-11-2020"> <!--date: Data de criação do documento-->
+    <SALESMAN> <!-- Toda a informação referente ao vendedor -->
+        <CODE>01</CODE> <!-- Código de vendedor -->
+        <NAME>Exemplo</NAME>
+        <NIF>12345678</NIF>
+        <CONTACTS>
+            <PHONE>999888777</PHONE>
+            <EMAIL>exemplo@gmail.com</EMAIL>
+        </CONTACTS>
+        <ADDRESS>
+            <STREET>Rua de exemplo</STREET>
+            <CITY>Cidade de Exemplo</CITY>
+            <COUNTRY>País de exemplo</COUNTRY>
+            <POSTAL_CODE>4000-765</POSTAL_CODE>
+            <NUMBER>01</NUMBER>
+        </ADDRESS>
+    </SALESMAN>
+    
+    <PRODUCTS> <!-- Todos os produtos disponíveis -->
+        
+        <!-- Produto 1 -->
+        <PRODUCT>
+            <PRODRUCT_INFO>
+                <NAME>Produto de exemplo 01</NAME>
+                <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
+                <BRAND>Marca de exemplo</BRAND>
+                <MODELS> <!-- Este campo nem sempre é aplicável -->
+                    <MODEL>
+                        <NAME>Modelo 1</NAME>
+                        <PRICE>100</PRICE>
+                    </MODEL>
+                    <MODEL>
+                        <NAME>Modelo 2</NAME>
+                        <PRICE>120</PRICE>
+                    </MODEL>
+                </MODELS> 
+                <KEY_CHARACTERISTICS> 
+                    <CHARACTERISTIC>
+                        Característica 01
+                    </CHARACTERISTIC>
+                    <CHARACTERISTIC>
+                        Característica 02
+                    </CHARACTERISTIC>
+                </KEY_CHARACTERISTICS> 
+            </PRODRUCT_INFO>
+
+            <SALE_INFO type="Venda Direta">
+                <ID>01</ID>
+                <STOCK>10</STOCK>
+                <START_DATE>11-11-2020</START_DATE>
+                <END_DATE>12-11-2020</END_DATE>
+                <AVAILABLE_COUNTRYS>
+                    <COUNTRY>Angola</COUNTRY>
+                    <COUNTRY>Portugal</COUNTRY>
+                </AVAILABLE_COUNTRYS>
+                <PAYMENT_METHODS>
+                    <PAYMENT_METHOD>PAYPALL</PAYMENT_METHOD>
+                </PAYMENT_METHODS>
+            </SALE_INFO>
+        </PRODUCT>
+        
+        <!-- Produto 2 -->
+        <PRODUCT>
+            <PRODRUCT_INFO>
+                <NAME>Produto de exemplo 02</NAME>
+                <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
+                <BRAND>Marca de exemplo</BRAND>
+                <KEY_CHARACTERISTICS> 
+                    <CHARACTERISTIC>
+                        Característica 01
+                    </CHARACTERISTIC>
+                    <CHARACTERISTIC>
+                        Característica 02
+                    </CHARACTERISTIC>
+                </KEY_CHARACTERISTICS> 
+            </PRODRUCT_INFO>
+            
+            <SALE_INFO type="leilao">
+                <ID>01</ID>
+                <BASE_PRICE>10</BASE_PRICE>
+                <FIRST_LICITATION>12</FIRST_LICITATION>
+                <MASTER_PRICE>100</MASTER_PRICE>
+                <START_DATE>11-11-2020</START_DATE>
+                <END_DATE>12-11-2020</END_DATE>
+                <AVAILABLE_COUNTRYS>
+                    <COUNTRY>Angola</COUNTRY>
+                    <COUNTRY>Portugal</COUNTRY>
+                </AVAILABLE_COUNTRYS>
+                <PAYMENT_METHODS>
+                    <PAYMENT_METHOD>PAYPALL</PAYMENT_METHOD>
+                </PAYMENT_METHODS>
+            </SALE_INFO>
+        </PRODUCT>
+    </PRODUCTS>
+    
+</DOCUMENT>
