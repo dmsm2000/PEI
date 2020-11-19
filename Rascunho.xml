@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DOCUMENT date="07-11-2020"> <!--date: Data de criação do documento-->
+<DOCUMENT date="2020-06-01"> <!--date: Data de criação do documento-->
     <SELLER> <!-- Toda a informação referente ao vendedor -->
         <UID>01</UID> <!-- Código de vendedor valor inteiro incremental -->
         <NAME>Exemplo</NAME>
-        <NIF>12345678</NIF> <!-- Verificar que é um NIF válido (9 números) -->
+        <NIF>123456789</NIF> <!-- Verificar que é um NIF válido (9 números) -->
         <CONTACTS>
             <PHONE>999888777</PHONE> <!-- Verificar que é um número de tlf válido -->
             <EMAIL>exemplo@gmail.com</EMAIL> <!-- Verivicar condições para ser um email -->
@@ -22,22 +22,15 @@
         <!-- Produto 1 -->
         <PRODUCT>
             <PRODUCT_INFO>
-                <NAME>Produto de exemplo 01</NAME>
-                <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
-                <BRAND>Marca de exemplo</BRAND>
-                <MODELS> <!-- Este campo nem sempre é aplicável -->
-                    <MODEL> 
-                        <NAME>Modelo 1</NAME>
-                        <STOCK>10</STOCK>
-                        <PRICE>100</PRICE>
-                    </MODEL>
-                    <MODEL>
-                        <NAME>Modelo 2</NAME>
-                        <STOCK>10</STOCK>
-                        <PRICE>120</PRICE>
-                    </MODEL>
-                </MODELS> 
-                <KEY_CHARACTERISTICS> 
+                <NAME>Produto de exemplo 01</NAME> <!-- obrigatorio -->
+                <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION> <!-- obrigatorio -->
+                <BRAND>Marca de exemplo</BRAND> <!-- obrigatorio -->
+                <STOCK>10</STOCK> <!-- default = 1 -->
+                <PRICE>100</PRICE> <!-- obrigatorio -->
+                <MODEL> <!-- Se aplicável -->
+                    <NAME>Modelo 1</NAME> <!-- obrigatorio -->
+                </MODEL>
+                <KEY_CHARACTERISTICS> <!-- obrigatorio -->
                     <CHARACTERISTIC>
                         Característica 01
                     </CHARACTERISTIC>
@@ -47,10 +40,10 @@
                 </KEY_CHARACTERISTICS> 
             </PRODUCT_INFO>
 
-            <SALE_INFO type="Venda Direta">
+            <SALE_INFO type="direct selling">
                 <ID>01</ID>
-                <START_DATE>11-11-2020</START_DATE>
-                <END_DATE>12-11-2020</END_DATE>
+                <START_DATE>2020-11-11</START_DATE>
+                <END_DATE>2020-11-11</END_DATE>
                 <AVAILABLE_COUNTRYS>
                     <COUNTRY>Angola</COUNTRY>
                     <COUNTRY>Portugal</COUNTRY>
@@ -65,7 +58,7 @@
         
         <!-- Produto 2 -->
         <PRODUCT>
-            <PRODRUCT_INFO>
+            <PRODUCT_INFO>
                 <NAME>Produto de exemplo 02</NAME>
                 <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
                 <BRAND>Marca de exemplo</BRAND>
@@ -77,15 +70,15 @@
                         Característica 02
                     </CHARACTERISTIC>
                 </KEY_CHARACTERISTICS> 
-            </PRODRUCT_INFO>
+            </PRODUCT_INFO>
             
-            <SALE_INFO type="leilao">
+            <SALE_INFO type="auction">
                 <ID>01</ID>
                 <MIN_BID>10</MIN_BID> <!-- Incremento mínimo -->
                 <STARTING_PRICE>12</STARTING_PRICE> <!-- Preço base -->
                 <BUY_NOW>100</BUY_NOW> <!-- Se aplicável, valor de compra instantânea -->
-                <START_DATE>11-11-2020</START_DATE>
-                <END_DATE>12-11-2020</END_DATE>
+                <START_DATE>2020-11-11</START_DATE>
+                <END_DATE>2020-11-11</END_DATE>
                 <AVAILABLE_COUNTRYS>
                     <COUNTRY>Angola</COUNTRY>
                     <COUNTRY>Portugal</COUNTRY>

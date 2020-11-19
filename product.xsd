@@ -7,4 +7,15 @@
     <xs:import schemaLocation="productInfo.xsd" namespace="http://www.buyteck.com/productinfo" />
     <xs:import schemaLocation="saleInfo.xsd" namespace="http://www.buyteck.com/saleinfo" />
 
+
+    <xs:element name="PRODUCT">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="productinfo:PRODUCT_INFO" />
+                <xs:element ref="saleinfo:SALE_INFO" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+
 </xs:schema>

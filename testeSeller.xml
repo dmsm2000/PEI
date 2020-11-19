@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DOCUMENT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="BuyTeck_validation.xsd" date="2020-01-02"> <!--date: Data de criação do documento-->
+<DOCUMENT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2020-01-02"> <!--date: Data de criação do documento-->
     <SELLER> <!-- Toda a informação referente ao vendedor -->
         <UID>01</UID> <!-- Código de vendedor valor inteiro incremental -->
         <NAME>Exemplo</NAME>
-        <NIF>12345678</NIF> <!-- Verificar que é um NIF válido (9 números) -->
+        <NIF>123456789</NIF> <!-- Verificar que é um NIF válido (9 números) -->
         <CONTACTS>
             <PHONE>999888777</PHONE> <!-- Verificar que é um número de tlf válido -->
-            <EMAIL>exemplo@gmail.com</EMAIL> <!-- Verificar condições para ser um email -->
+            <EMAIL>exemplo@hotmail.com</EMAIL> <!-- Verificar condições para ser um email -->
         </CONTACTS>
         <ADDRESS>
             <STREET>Rua de exemplo</STREET>

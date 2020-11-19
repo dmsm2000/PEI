@@ -3,4 +3,30 @@
     targetNamespace="http://www.buyteck.com/productinfo">
     
     
+    <xs:element name="PRODUCT_INFO">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="NAME" type="xs:string" minOccurs="1"></xs:element>
+                <xs:element name="DESCRIPTION" type="xs:string" minOccurs="1"></xs:element>
+                <xs:element name="BRAND" type="xs:string" minOccurs="1"></xs:element>
+                <xs:element name="STOCK" type="xs:integer" minOccurs="1"></xs:element>
+                <xs:element name="PRICE" type="xs:float" minOccurs="1"></xs:element>
+                <xs:element name="MODEL">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="NAME" type="xs:string" minOccurs="1"></xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="KEY_CHARACTERISTICS">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="CHARACTERISTIC" type="xs:string" minOccurs="1"></xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    
 </xs:schema>
