@@ -7,27 +7,27 @@
         <xs:complexType>
             <xs:all>
                 <xs:element name="ID" type="xs:integer" minOccurs="1" maxOccurs="1"></xs:element>
-                <xs:element name="MIN_BID" type="xs:float" minOccurs="1" maxOccurs="1"></xs:element>
-                <xs:element name="STARTING_PRICE" type="xs:float" minOccurs="1" maxOccurs="1"></xs:element>
-                <xs:element name="BUY_NOW" type="xs:float" minOccurs="1" maxOccurs="1"></xs:element>
+                <xs:element name="MIN_BID" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
+                <xs:element name="STARTING_PRICE" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
+                <xs:element name="BUY_NOW" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
                 <xs:element name="START_DATE" type="xs:date" minOccurs="1" maxOccurs="1"></xs:element>
                 <xs:element name="END_DATE" type="xs:date" minOccurs="1" maxOccurs="1"></xs:element>
                 <xs:element name="AVAILABLE_COUNTRYS">
                     <xs:complexType>
-                        <xs:all>
-                            <xs:element name="COUNTRY" type="xs:string" minOccurs="1"></xs:element>
-                        </xs:all>
+                        <xs:sequence>
+                            <xs:element name="COUNTRY" type="xs:string" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="PAYMENT_METHODS">
                     <xs:complexType>
-                        <xs:all>
-                            <xs:element name="PAYMENT_METHOD" type="xs:string" minOccurs="1"></xs:element>
-                        </xs:all>
+                        <xs:sequence>
+                            <xs:element name="PAYMENT_METHOD" type="xs:string" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:all>
-            <xs:attribute name="date">
+            <xs:attribute name="type">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="direct selling"></xs:enumeration>
