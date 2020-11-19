@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.buyteck.com/address" > 
+    
+    <xs:element name="ADDRESS">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="NUMBER" type="xs:integer" maxOccurs="1" />
+                <xs:element name="STREET" type="xs:string" maxOccurs="1"/>
+                <xs:element name="POSTAL_CODE" maxOccurs="1">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="([1-9][0-9][0-9][0-9])-([0-9][0-9][0-9])"></xs:pattern>
+                            <xs:minLength value="8"/>
+                            <xs:maxLength value="8"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CITY" type="xs:string" maxOccurs="1" />
+                <xs:element name="COUNTRY" type="xs:string" maxOccurs="1" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>  
+
+</xs:schema>

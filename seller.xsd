@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:address="http://www.buyteck.com/address"
+    targetNamespace="http://www.buyteck.com/seller">
+    
+    <xs:import schemaLocation="address.xsd" namespace="http://www.buyteck.com/address" />
+    
+    <xs:element name="SELLER">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="UID" type="xs:integer" maxOccurs="1"></xs:element>
+                <xs:element name="NAME" type="xs:string" maxOccurs="1"></xs:element>
+                <xs:element name="NIF" maxOccurs="1" >
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])"></xs:pattern>
+                            <xs:minLength value="9"/>
+                            <xs:maxLength value="9"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="CONTACTS">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="PHONE" maxOccurs="1" >
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])"></xs:pattern>
+                                           <xs:minLength value="9"/>
+                                        <xs:maxLength value="9"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="EMAIL" maxOccurs="1">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="([0-9a-zA-Z]([-.\w][0-9a-zA-Z])@([0-9a-zA-Z][-\w]*[0-9a-zA-Z].)+[a-zA-Z]{2,9})"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element ref="address:ADDRESS"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

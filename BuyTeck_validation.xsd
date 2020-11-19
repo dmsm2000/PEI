@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:seller="http://www.buyteck.com/seller"
+    xmlns:product="http://www.buyteck.com/product">
+    
+    <xs:import schemaLocation="seller.xsd" namespace="http://www.buyteck.com/seller" />
+    <xs:import schemaLocation="product.xsd" namespace="http://www.buyteck.com/product" />
+
+    <xs:element name="DOCUMENT">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="seller:SELLER"></xs:element>
+            </xs:all>
+            <xs:attribute name="date" type="xs:date"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

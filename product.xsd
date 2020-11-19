@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:productinfo="http://www.buyteck.com/productinfo"
+    xmlns:saleinfo="http://www.buyteck.com/saleinfo"
+    targetNamespace="http://www.buyteck.com/product" > 
+    
+    <xs:import schemaLocation="productInfo.xsd" namespace="http://www.buyteck.com/productinfo" />
+    <xs:import schemaLocation="saleInfo.xsd" namespace="http://www.buyteck.com/saleinfo" />
+
+</xs:schema>

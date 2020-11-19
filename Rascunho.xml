@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DOCUMENT date="07-11-2020"> <!--date: Data de criação do documento-->
-    <SALESMAN> <!-- Toda a informação referente ao vendedor -->
-        <CODE>01</CODE> <!-- Código de vendedor -->
+    <SELLER> <!-- Toda a informação referente ao vendedor -->
+        <UID>01</UID> <!-- Código de vendedor valor inteiro incremental -->
         <NAME>Exemplo</NAME>
-        <NIF>12345678</NIF>
+        <NIF>12345678</NIF> <!-- Verificar que é um NIF válido (9 números) -->
         <CONTACTS>
-            <PHONE>999888777</PHONE>
-            <EMAIL>exemplo@gmail.com</EMAIL>
+            <PHONE>999888777</PHONE> <!-- Verificar que é um número de tlf válido -->
+            <EMAIL>exemplo@gmail.com</EMAIL> <!-- Verivicar condições para ser um email -->
         </CONTACTS>
         <ADDRESS>
             <STREET>Rua de exemplo</STREET>
             <CITY>Cidade de Exemplo</CITY>
-            <COUNTRY>País de exemplo</COUNTRY>
+            <COUNTRY>País de exemplo</COUNTRY> 
             <POSTAL_CODE>4000-765</POSTAL_CODE>
             <NUMBER>01</NUMBER>
         </ADDRESS>
-    </SALESMAN>
+    </SELLER>
     
     <PRODUCTS> <!-- Todos os produtos disponíveis -->
         
         <!-- Produto 1 -->
         <PRODUCT>
-            <PRODRUCT_INFO>
+            <PRODUCT_INFO>
                 <NAME>Produto de exemplo 01</NAME>
                 <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
                 <BRAND>Marca de exemplo</BRAND>
                 <MODELS> <!-- Este campo nem sempre é aplicável -->
-                    <MODEL>
+                    <MODEL> 
                         <NAME>Modelo 1</NAME>
+                        <STOCK>10</STOCK>
                         <PRICE>100</PRICE>
                     </MODEL>
                     <MODEL>
                         <NAME>Modelo 2</NAME>
+                        <STOCK>10</STOCK>
                         <PRICE>120</PRICE>
                     </MODEL>
                 </MODELS> 
@@ -43,11 +45,10 @@
                         Característica 02
                     </CHARACTERISTIC>
                 </KEY_CHARACTERISTICS> 
-            </PRODRUCT_INFO>
+            </PRODUCT_INFO>
 
             <SALE_INFO type="Venda Direta">
                 <ID>01</ID>
-                <STOCK>10</STOCK>
                 <START_DATE>11-11-2020</START_DATE>
                 <END_DATE>12-11-2020</END_DATE>
                 <AVAILABLE_COUNTRYS>
@@ -56,6 +57,8 @@
                 </AVAILABLE_COUNTRYS>
                 <PAYMENT_METHODS>
                     <PAYMENT_METHOD>PAYPALL</PAYMENT_METHOD>
+                    <PAYMENT_METHOD>MBWAY</PAYMENT_METHOD>
+                    <PAYMENT_METHOD>CREDIT CARD</PAYMENT_METHOD>
                 </PAYMENT_METHODS>
             </SALE_INFO>
         </PRODUCT>
@@ -78,9 +81,9 @@
             
             <SALE_INFO type="leilao">
                 <ID>01</ID>
-                <BASE_PRICE>10</BASE_PRICE>
-                <FIRST_LICITATION>12</FIRST_LICITATION>
-                <MASTER_PRICE>100</MASTER_PRICE>
+                <MIN_BID>10</MIN_BID> <!-- Incremento mínimo -->
+                <STARTING_PRICE>12</STARTING_PRICE> <!-- Preço base -->
+                <BUY_NOW>100</BUY_NOW> <!-- Se aplicável, valor de compra instantânea -->
                 <START_DATE>11-11-2020</START_DATE>
                 <END_DATE>12-11-2020</END_DATE>
                 <AVAILABLE_COUNTRYS>
@@ -92,6 +95,7 @@
                 </PAYMENT_METHODS>
             </SALE_INFO>
         </PRODUCT>
+        
     </PRODUCTS>
     
 </DOCUMENT>
