@@ -18,7 +18,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:all>
-            <xs:attribute name="date" type="xs:date"></xs:attribute>
+            <xs:attribute name="date" type="xs:date" use="required"></xs:attribute>
         </xs:complexType>
     </xs:element>
     

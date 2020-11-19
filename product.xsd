@@ -2,6 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns:productinfo="http://www.buyteck.com/productinfo"
     xmlns:saleinfo="http://www.buyteck.com/saleinfo"
+    xmlns="http://www.buyteck.com/product"
     targetNamespace="http://www.buyteck.com/product" > 
     
     <xs:import schemaLocation="productInfo.xsd" namespace="http://www.buyteck.com/productinfo" />

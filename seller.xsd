@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:address="http://www.buyteck.com/address"
+    xmlns="http://www.buyteck.com/seller"
     targetNamespace="http://www.buyteck.com/seller">
     
     <xs:import schemaLocation="address.xsd" namespace="http://www.buyteck.com/address" />
