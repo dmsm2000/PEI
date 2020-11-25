@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DOCUMENT date="2020-06-01"> <!--date: Data de criação do documento-->
-    <SELLER> <!-- Toda a informação referente ao vendedor -->
+<DOCUMENT date="2020-06-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="buyTeck_validation.xsd"
+    xmlns:s="http://www.buyteck.com/seller"
+    xmlns:a="http://www.buyteck.com/address"
+    xmlns:p="http://www.buyteck.com/product"
+    xmlns:pi="http://www.buyteck.com/productinfo"
+    xmlns:si="http://www.buyteck.com/saleinfo"> <!--date: Data de criação do documento-->
+    <s:SELLER> <!-- Toda a informação referente ao vendedor -->
         <UID>01</UID> <!-- Código de vendedor valor inteiro incremental -->
         <NAME>Exemplo</NAME>
-        <NIF>123456789</NIF> <!-- Verificar que é um NIF válido (9 números) -->
+        <NIF>123456789</NIF> <!-- Verificar que é um NIF válido (9 números) --> 
         <CONTACTS>
             <PHONE>999888777</PHONE> <!-- Verificar que é um número de tlf válido -->
-            <EMAIL>exemplo@gmail.com</EMAIL> <!-- Verivicar condições para ser um email -->
+            <EMAIL>exemplo@gmail.com</EMAIL> <!-- Verificar condições para ser um email -->
         </CONTACTS>
-        <ADDRESS>
+        <a:ADDRESS>
             <STREET>Rua de exemplo</STREET>
             <CITY>Cidade de Exemplo</CITY>
             <COUNTRY>País de exemplo</COUNTRY> 
             <POSTAL_CODE>4000-765</POSTAL_CODE>
             <NUMBER>01</NUMBER>
-        </ADDRESS>
-    </SELLER>
+        </a:ADDRESS> 
+    </s:SELLER>
     
     <PRODUCTS> <!-- Todos os produtos disponíveis -->
         
         <!-- Produto 1 -->
-        <PRODUCT>
-            <PRODUCT_INFO>
+        <p:PRODUCT>
+            <pi:PRODUCT_INFO>
                 <NAME>Produto de exemplo 01</NAME> <!-- obrigatorio -->
                 <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION> <!-- obrigatorio -->
                 <BRAND>Marca de exemplo</BRAND> <!-- obrigatorio -->
                 <STOCK>10</STOCK> <!-- default = 1 -->
-                <PRICE>100</PRICE> <!-- obrigatorio -->
                 <MODEL> <!-- Se aplicável -->
                     <NAME>Modelo 1</NAME> <!-- obrigatorio -->
                 </MODEL>
@@ -38,13 +43,14 @@
                         Característica 02
                     </CHARACTERISTIC>
                 </KEY_CHARACTERISTICS> 
-            </PRODUCT_INFO>
-
-            <SALE_INFO type="direct selling">
+            </pi:PRODUCT_INFO>
+            
+            <si:SALE_INFO type="direct selling" status="ativo">
                 <ID>01</ID>
                 <START_DATE>2020-11-11</START_DATE>
                 <END_DATE>2020-11-11</END_DATE>
-                <AVAILABLE_COUNTRYS>
+                <PRICE>1.8</PRICE>
+                <AVAILABLE_COUNTRYS>    
                     <COUNTRY>Angola</COUNTRY>
                     <COUNTRY>Portugal</COUNTRY>
                 </AVAILABLE_COUNTRYS>
@@ -53,12 +59,12 @@
                     <PAYMENT_METHOD>MBWAY</PAYMENT_METHOD>
                     <PAYMENT_METHOD>CREDIT CARD</PAYMENT_METHOD>
                 </PAYMENT_METHODS>
-            </SALE_INFO>
-        </PRODUCT>
+            </si:SALE_INFO>
+        </p:PRODUCT>
         
         <!-- Produto 2 -->
-        <PRODUCT>
-            <PRODUCT_INFO>
+        <p:PRODUCT>
+            <pi:PRODUCT_INFO>
                 <NAME>Produto de exemplo 02</NAME>
                 <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
                 <BRAND>Marca de exemplo</BRAND>
@@ -70,9 +76,9 @@
                         Característica 02
                     </CHARACTERISTIC>
                 </KEY_CHARACTERISTICS> 
-            </PRODUCT_INFO>
+            </pi:PRODUCT_INFO>
             
-            <SALE_INFO type="auction">
+            <si:SALE_INFO type="auction" status="inativo">
                 <ID>01</ID>
                 <MIN_BID>10</MIN_BID> <!-- Incremento mínimo -->
                 <STARTING_PRICE>12</STARTING_PRICE> <!-- Preço base -->
@@ -86,9 +92,9 @@
                 <PAYMENT_METHODS>
                     <PAYMENT_METHOD>PAYPALL</PAYMENT_METHOD>
                 </PAYMENT_METHODS>
-            </SALE_INFO>
-        </PRODUCT>
+            </si:SALE_INFO>
+        </p:PRODUCT>
         
     </PRODUCTS>
-    
 </DOCUMENT>
+

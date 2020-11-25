@@ -11,7 +11,6 @@
                 <xs:element name="DESCRIPTION" type="xs:string" minOccurs="1"></xs:element>
                 <xs:element name="BRAND" type="xs:string" minOccurs="1"></xs:element>
                 <xs:element name="STOCK" type="xs:integer" minOccurs="0"></xs:element>
-                <xs:element name="PRICE" type="xs:float" minOccurs="0"></xs:element>
                 <xs:element name="MODEL" minOccurs="0">
                     <xs:complexType>
                         <xs:all>

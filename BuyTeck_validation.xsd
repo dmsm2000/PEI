@@ -13,7 +13,7 @@
                 <xs:element name="PRODUCTS">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element ref="product:PRODUCT"></xs:element>
+                            <xs:element ref="product:PRODUCT" minOccurs="1" maxOccurs="unbounded"></xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
