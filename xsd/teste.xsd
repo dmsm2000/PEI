@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="DOCUMENT">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="SELLER">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="UID" type="xs:integer" maxOccurs="1"></xs:element>
+                            <xs:element name="NAME" type="xs:string" maxOccurs="1"></xs:element>
+                            <xs:element name="NIF" maxOccurs="1" >
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])"></xs:pattern>
+                                        <xs:minLength value="9"/>
+                                        <xs:maxLength value="9"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="CONTACTS">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="PHONE" maxOccurs="1" >
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="([1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])"></xs:pattern>
+                                                    <xs:minLength value="9"/>
+                                                    <xs:maxLength value="9"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="EMAIL" maxOccurs="1">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                            
+                            <!-- ADDRESS INICIO -->
+                            
+                            <xs:element name="ADDRESS">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="NUMBER" type="xs:integer" maxOccurs="1" />
+                                        <xs:element name="STREET" type="xs:string" maxOccurs="1"/>
+                                        <xs:element name="POSTAL_CODE" maxOccurs="1">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="([1-9][0-9][0-9][0-9])-([0-9][0-9][0-9])"></xs:pattern>
+                                                    <xs:minLength value="8"/>
+                                                    <xs:maxLength value="8"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="CITY" type="xs:string" maxOccurs="1" />
+                                        <xs:element name="COUNTRY" type="xs:string" maxOccurs="1" />
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>  
+                            
+                            <!-- ADDRESS FIM -->
+                            
+                        </xs:all>
+                    </xs:complexType>
+                    </xs:element>
+                <xs:element name="PRODUCTS">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="PRODUCT" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="PRODUCT_INFO">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="NAME" type="xs:string" minOccurs="1"></xs:element>
+                                                    <xs:element name="DESCRIPTION" type="xs:string" minOccurs="1"></xs:element>
+                                                    <xs:element name="BRAND" type="xs:string" minOccurs="1"></xs:element>
+                                                    <xs:element name="STOCK" type="xs:integer" minOccurs="0"></xs:element>
+                                                    <xs:element name="MODEL" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element name="NAME" type="xs:string"></xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="KEY_CHARACTERISTICS" minOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="CHARACTERISTIC" type="xs:string" maxOccurs="unbounded"></xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="SALE_INFO">                                         <xs:complexType>
+                                                <xs:all>
+                                                    <xs:element name="ID" type="xs:integer" minOccurs="1" maxOccurs="1"></xs:element>
+                                                    <xs:element name="MIN_BID" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
+                                                    <xs:element name="STARTING_PRICE" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
+                                                    <xs:element name="PRICE" minOccurs="0" maxOccurs="1" type="xs:float"></xs:element>
+                                                    <xs:element name="BUY_NOW" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
+                                                    <xs:element name="START_DATE" type="xs:date" minOccurs="1" maxOccurs="1"></xs:element>
+                                                    <xs:element name="END_DATE" type="xs:date" minOccurs="1" maxOccurs="1"></xs:element>
+                                                    <xs:element name="AVAILABLE_COUNTRYS">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="COUNTRY" type="xs:string" maxOccurs="unbounded"></xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="PAYMENT_METHODS">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="PAYMENT_METHOD" type="xs:string" maxOccurs="unbounded"></xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:all>
+                                                <xs:attribute name="type" use="required">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:enumeration value="direct selling"></xs:enumeration>
+                                                            <xs:enumeration value="auction"></xs:enumeration>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                                <xs:attribute name="status" use="optional" default="active">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:enumeration value="active"></xs:enumeration>
+                                                            <xs:enumeration value="canceled"></xs:enumeration>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:all>
+            <xs:attribute name="date" type="xs:date" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    
+</xs:schema>

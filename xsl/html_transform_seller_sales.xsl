@@ -2,59 +2,73 @@
     <xsl:template match="/">
         <html>
             <style type="text/css">
-                @import "bootstrap.min.css";
+                @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
                 
                 * {
-                    font-family: Lobster, monospace;
+                font-family: Verdana, sans-serif;
+                }
+                
+                .whiteSpace {
+                padding-left: 10px;
                 }
                 
                 h2 {
-                    text-align: center;
+                font-family: Verdana, sans-serif;
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
                 }
             </style>
-            <body>
+            
+            <header>
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="#">BuyTeckDB</a>
+                    <a class="navbar-brand" href="http://localhost:8984/resume">BuyTeckDB</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon" />
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link" href="http://localhost:8984/getResume">Inicio</a>
-                            <a class="nav-link" href="http://localhost:8984/getResume/vendedores">Vendedores</a>
-                            <a class="nav-link active" href="http://localhost:8984/getResume/produtos">Produtos</a>
-                            <a class="nav-link" href="http://localhost:8984/getResume/vendasAtivas">Vendas ativas</a>
+                            <a class="nav-link" href="http://localhost:8984/resume/sellers">Sellers</a>
+                            <a class="nav-link" href="http://localhost:8984/resume/products">Products</a>
+                            <a class="nav-link" href="http://localhost:8984/resume/activesales">Active Sales</a>
                         </div>
                     </div>
                 </nav>
-                <h2>PRODUTOS REGISTADOS: <xsl:value-of select="count(all//PRODUCT_INFO)"/>
+            </header>
+            
+            <body>
+                <h2>Number of Sales: <span class="whiteSpace"><xsl:value-of select="count(all//PRODUCT_INFO)"/></span>
                 </h2>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
+                            <th scope="col">UID</th>
                             <th scope="col">SALE TYPE</th>
+                            <th scope="col">STATUS</th>
                             <th scope="col">PRODUCT</th>
-                            <th scope="col">BRAND</th>
-                            <th scope="col">STOCK</th>
-                            <th scope="col">DESCRIPTION</th>
+                            <th scope="col">START DATE</th>
+                            <th scope="col">END DATE</th>
                         </tr>
                     </thead>
-                    <xsl:for-each select="//DOCUMENT//PRODUCT">
+                    <xsl:for-each select="all//PRODUCT">
                         <tr>
                             <td>
+                                <xsl:value-of select="SALE_INFO/ID"/>
+                            </td>
+                            <td>
                                 <xsl:value-of select="SALE_INFO/@type"/>
+                            </td>
+                            <td>
+                                <xsl:value-of select="SALE_INFO/@status"/>
                             </td>
                             <td>
                                 <xsl:value-of select="PRODUCT_INFO/NAME"/>
                             </td>
                             <td>
-                                <xsl:value-of select="PRODUCT_INFO/BRAND"/>
+                                <xsl:value-of select="SALE_INFO/START_DATE"/>
                             </td>
                             <td>
-                                <xsl:value-of select="PRODUCT_INFO/STOCK"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="PRODUCT_INFO/DESCRIPTION"/>
+                                <xsl:value-of select="SALE_INFO/END_DATE"/>
                             </td>
                         </tr>
                     </xsl:for-each>

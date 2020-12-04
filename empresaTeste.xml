@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="html_transform_Home.xsl"?>  
 <DOCUMENT date="2020-06-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="buyTeck_validation.xsd"
+    xsi:noNamespaceSchemaLocation="xsd\BuyTeck_validation.xsd"
     xmlns:s="http://www.buyteck.com/seller"
     xmlns:a="http://www.buyteck.com/address"
     xmlns:p="http://www.buyteck.com/product"

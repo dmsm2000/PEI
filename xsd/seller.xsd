@@ -4,7 +4,7 @@
     xmlns="http://www.buyteck.com/seller"
     targetNamespace="http://www.buyteck.com/seller">
     
-    <xs:import schemaLocation="address.xsd" namespace="http://www.buyteck.com/address" />
+    <xs:import schemaLocation="C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsd\address.xsd" namespace="http://www.buyteck.com/address" />
     
     <xs:element name="SELLER">
         <xs:complexType>

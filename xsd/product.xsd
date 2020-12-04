@@ -5,8 +5,8 @@
     xmlns="http://www.buyteck.com/product"
     targetNamespace="http://www.buyteck.com/product" > 
     
-    <xs:import schemaLocation="productInfo.xsd" namespace="http://www.buyteck.com/productinfo" />
-    <xs:import schemaLocation="saleInfo.xsd" namespace="http://www.buyteck.com/saleinfo" />
+    <xs:import schemaLocation="C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsd\productInfo.xsd" namespace="http://www.buyteck.com/productinfo" />
+    <xs:import schemaLocation="C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsd\saleInfo.xsd" namespace="http://www.buyteck.com/saleinfo" />
 
 
     <xs:element name="PRODUCT">
