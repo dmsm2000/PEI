@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DOCUMENT date="2020-06-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="teste.xsd"> <!--date: Data de criação do documento-->
+    <SELLER> <!-- Toda a informação referente ao vendedor -->
+        <UID>1</UID> <!-- Código de vendedor valor inteiro incremental -->
+        <NAME>Exemplo</NAME>
+        <NIF>123456789</NIF> <!-- Verificar que é um NIF válido (9 números) --> 
+        <CONTACTS>
+            <PHONE>999888777</PHONE> <!-- Verificar que é um número de tlf válido -->
+            <EMAIL>exemplo@gmail.com</EMAIL> <!-- Verificar condições para ser um email -->
+        </CONTACTS>
+        <ADDRESS>
+            <STREET>Rua de exemplo</STREET>
+            <CITY>Cidade de Exemplo</CITY>
+            <COUNTRY>País de exemplo</COUNTRY> 
+            <POSTAL_CODE>4000-765</POSTAL_CODE>
+            <NUMBER>01</NUMBER>
+        </ADDRESS> 
+    </SELLER>
+    
+    <PRODUCTS> <!-- Todos os produtos disponíveis -->
+        
+        <!-- Produto 1 -->
+        <PRODUCT>
+            <PRODUCT_INFO>
+                <NAME>Produto de exemplo 01</NAME> <!-- obrigatorio -->
+                <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION> <!-- obrigatorio -->
+                <BRAND>Marca de exemplo</BRAND> <!-- obrigatorio -->
+                <STOCK>10</STOCK> <!-- default = 1 -->
+                <MODEL> <!-- Se aplicável -->
+                    <NAME>Modelo 1</NAME> <!-- obrigatorio -->
+                </MODEL>
+                <KEY_CHARACTERISTICS> <!-- obrigatorio -->
+                    <CHARACTERISTIC>
+                        Característica 01
+                    </CHARACTERISTIC>
+                    <CHARACTERISTIC>
+                        Característica 02
+                    </CHARACTERISTIC>
+                </KEY_CHARACTERISTICS> 
+            </PRODUCT_INFO>
+            
+            <SALE_INFO type="direct selling" status="active">
+                <ID>1</ID>
+                <START_DATE>2020-11-11</START_DATE>
+                <END_DATE>2020-11-11</END_DATE>
+                <PRICE>1.8</PRICE>
+                <AVAILABLE_COUNTRYS>    
+                    <COUNTRY>Angola</COUNTRY>
+                    <COUNTRY>Portugal</COUNTRY>
+                </AVAILABLE_COUNTRYS>
+                <PAYMENT_METHODS>
+                    <PAYMENT_METHOD>PAYPALL</PAYMENT_METHOD>
+                    <PAYMENT_METHOD>MBWAY</PAYMENT_METHOD>
+                    <PAYMENT_METHOD>CREDIT CARD</PAYMENT_METHOD>
+                </PAYMENT_METHODS>
+            </SALE_INFO>
+        </PRODUCT>
+        
+        <!-- Produto 2 -->
+            <PRODUCT>
+                <PRODUCT_INFO>
+                    <NAME>Produto de exemplo 02</NAME>
+                    <DESCRIPTION>Eu sou um produto de exemplo</DESCRIPTION>
+                    <BRAND>Marca de exemplo</BRAND>
+                    <KEY_CHARACTERISTICS> 
+                        <CHARACTERISTIC>
+                            Característica 01
+                        </CHARACTERISTIC>
+                        <CHARACTERISTIC>
+                            Característica 02
+                        </CHARACTERISTIC>
+                    </KEY_CHARACTERISTICS> 
+                </PRODUCT_INFO>
+                
+                <SALE_INFO type="auction" status="canceled">
+                    <ID>2</ID>
+                    <MIN_BID>10</MIN_BID> <!-- Incremento mínimo -->
+                    <STARTING_PRICE>12</STARTING_PRICE> <!-- Preço base -->
+                    <BUY_NOW>100</BUY_NOW> <!-- Se aplicável, valor de compra instantânea -->
+                    <START_DATE>2020-11-11</START_DATE>
+                    <END_DATE>2020-11-11</END_DATE>
+                    <AVAILABLE_COUNTRYS>
+                        <COUNTRY>Angola</COUNTRY>
+                        <COUNTRY>Portugal</COUNTRY>
+                    </AVAILABLE_COUNTRYS>
+                    <PAYMENT_METHODS>
+                        <PAYMENT_METHOD>PAYPALL</PAYMENT_METHOD>
+                    </PAYMENT_METHODS>
+                </SALE_INFO>
+            </PRODUCT>
+        
+    </PRODUCTS>
+</DOCUMENT>

@@ -8,7 +8,7 @@ declare %updating
 %rest:POST("{$body}")
 function page:addToDatabase($body as document-node()) {
 
-let $schema := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\teste.xsd")
+let $schema := doc("../xsd/teste.xsd")
 
 let $res := validate:xsd-report($body, $schema)
 
@@ -84,6 +84,7 @@ function page:cancelSale($id) {
 for $doc in db:open("BuyTeckDB")//SALE_INFO
 where $doc/ID = $id
 return replace value of node $doc/@status with "canceled"
+
 };
 
 (: Ativa um negócio :)
@@ -98,7 +99,6 @@ function page:activateSale($id) {
 for $doc in db:open("BuyTeckDB")//SALE_INFO
 where $doc/ID = $id
 return replace value of node $doc/@status with "active"
-
 };
 
 (: Altera a data de fim de negócio :)
@@ -114,7 +114,6 @@ function page:extendDate($id, $newDate) {
 for $doc in db:open("BuyTeckDB")//SALE_INFO
 where $doc/ID = $id
 return replace value of node $doc/END_DATE with $newDate
-
 };
 
 (: Altera o preço de um negócio :)
@@ -130,7 +129,6 @@ function page:updatePrice($id, $newPrice) {
 for $doc in db:open("BuyTeckDB")//SALE_INFO
 where $doc/ID = $id
 return replace value of node $doc/PRICE with $newPrice
-
 };
 
 (: Atualiza o stock de um produto :)
@@ -146,7 +144,6 @@ function page:updateStock($id, $stock) {
 for $doc in db:open("BuyTeckDB")//PRODUCT
 where $doc/SALE_INFO/ID = $id
 return replace value of node $doc/PRODUCT_INFO/STOCK with $stock
-
 };
 
 
@@ -158,7 +155,7 @@ declare
 %rest:GET
 function page:getHTML(){
 let $r := <all>{db:open("BuyTeckDB")//DOCUMENT}</all>
-let $style := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsl\html_transform_Home.xsl")
+let $style := doc("../xsl/html_transform_Home.xsl")
 return xslt:transform($r, $style) 
 };
 
@@ -168,7 +165,7 @@ declare
 %rest:GET
 function page:getHTMLVendedores(){
 let $r := <all>{db:open("BuyTeckDB")//DOCUMENT}</all>
-let $style := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsl\html_transform_sellers.xsl")
+let $style := doc("../xsl/html_transform_sellers.xsl")
 return xslt:transform($r, $style)
 };
 
@@ -178,7 +175,7 @@ declare
 %rest:GET
 function page:getHTMLProdutos(){
 let $r := <all>{db:open("BuyTeckDB")//DOCUMENT}</all>
-let $style := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsl\html_transform_Products.xsl")
+let $style := doc("../xsl/html_transform_Products.xsl")
 return xslt:transform($r, $style)
 };
 
@@ -192,7 +189,7 @@ for $sale in db:open("BuyTeckDB")//PRODUCT/SALE_INFO
 where $sale/@status = "active"
 return $sale
 }</all>
-let $style := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsl\html_transform_ActiveSales.xsl")
+let $style := doc("../xsl/html_transform_ActiveSales.xsl")
 return xslt:transform($r, $style)
 };
 
@@ -203,11 +200,11 @@ declare
 %output:media-type("html")
 %rest:GET
 function page:getProductsHTML($seller) {
-let $res := for $doc in db:open("BuyTeckDB")/DOCUMENT
+let $res := for $doc in db:open("BuyTeckDB")//DOCUMENT
 where $doc/SELLER/UID = $seller
 return <all>{$doc/PRODUCTS/PRODUCT}</all>
 
-let $style := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsl\html_transform_seller_products.xsl")
+let $style := doc("..\xsl\html_transform_seller_products.xsl")
 
 return xslt:transform($res, $style)
 };
@@ -220,7 +217,7 @@ declare
 %rest:GET
 function page:getSalesHTML($seller) {
 
-let $style := doc("C:\David BKP\uni\2º ano\1º_semestre\Processamento_Estruturado_de_Informação\Trabalho_1\xsl\html_transform_seller_sales.xsl")
+let $style := doc("../xsl/html_transform_seller_sales.xsl")
 
 let $res := <all>{
 let $docs := for $doc in db:open("BuyTeckDB")/DOCUMENT
@@ -232,3 +229,4 @@ return $doc/PRODUCTS/PRODUCT}</all>
 
 return xslt:transform($res, $style)
 };
+

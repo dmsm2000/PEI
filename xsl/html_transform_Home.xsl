@@ -87,7 +87,7 @@
                                             <input id="sellerid" type="text" class="form-control" placeholder="Insert here the ID of the seller that you want to check" name="seller"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form2').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('sellerid').value == '') ? alert('Please, fill in the field.') : document.getElementById('form2').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('sellerid').value = ''">Reset</button>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                             <input id="sellerid2" type="text" class="form-control" placeholder="Insert here the ID of the seller that you want to check" name="seller"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form3').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('sellerid2').value == '') ? alert('Please, fill in the field.') : document.getElementById('form3').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('sellerid2').value = ''">Reset</button>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                                             <input id="productid" type="text" class="form-control" placeholder="Insert here the name of the product that you want to check the stock" name="product"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form4').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('productid').value == '') ? alert('Please, fill in the field.') : document.getElementById('form4').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('productid').value = ''">Reset</button>
                                 </div>
                             </div>
@@ -144,14 +144,13 @@
                                             <input id="sellerid3" type="text" class="form-control mb" placeholder="Insert here the seller id that you want to cancel." name="seller"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form5').submit();">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('sellerid3').value == '') ? alert('Please, fill in the field.') : document.getElementById('form5').submit();">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('sellerid3').value = ''">Reset</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 
                 <div class="container">
                     <div class="row">
@@ -164,7 +163,7 @@
                                             <input id="saleid1" type="text" class="form-control" placeholder="Insert here the ID of the sale that you want to cancel" name="id"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark mb" onclick="document.getElementById('form6').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark mb" onclick="(document.getElementById('saleid1').value == '') ? alert('Please, fill in the field.') : document.getElementById('form6').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray mb" onclick="document.getElementById('saleid1').value = ''">Reset</button>
                                     <form action="http://localhost:8984/activateselling" id="form11">
                                         <div class="form-group">
@@ -172,13 +171,18 @@
                                             <input id="saleid11" type="text" class="form-control" placeholder="Insert here the ID of the sale that you want to activate" name="id"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form11').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('saleid11').value == '') ? alert('Please, fill in the field.') : document.getElementById('form11').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('saleid11').value = ''">Reset</button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
                         <div class="col">
-                            <div class="card">
+                            <div class="card mb">
                                 <div class="card-body">
                                     <form action="http://localhost:8984/extenddate" id="form7">
                                         <div class="form-group">
@@ -187,13 +191,13 @@
                                             <input id="newDate" type="date" class="form-control" placeholder="Insert here the new date" name="newDate"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form7').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('saleid2').value == '' || document.getElementById('newDate').value == '') ? alert('Please, fill in the field.') :  document.getElementById('form7').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('saleid2').value = ''; document.getElementById('newDate').value = ''">Reset</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card">
+                            <div class="card mb">
                                 <div class="card-body">
                                     <form action="http://localhost:8984/updateprice" id="form8">
                                         <div class="form-group">
@@ -202,7 +206,7 @@
                                             <input id="newPrice" type="text" class="form-control" placeholder="Insert here the new price" name="newPrice"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form8').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('newPrice').value == '' || document.getElementById('saleid3').value == '') ? alert('Please, fill in the field.') :  document.getElementById('form8').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('newPrice').value = ''; document.getElementById('saleid3').value = ''">Reset</button>
                                 </div>
                             </div>
@@ -222,7 +226,7 @@
                                             <input id="newStock" type="text" class="form-control" placeholder="Insert here the new stock" name="stock"/>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-dark" onclick="document.getElementById('form9').submit()">Submit</button>
+                                    <button type="submit" class="btn btn-dark" onclick="(document.getElementById('saleid4').value == '' || document.getElementById('newStock').value == '') ? alert('Please, fill in the field.') :  document.getElementById('form9').submit()">Submit</button>
                                     <button type="reset" class="btn btn-gray" onclick="document.getElementById('saleid4').value = ''; document.getElementById('newStock').value = ''">Reset</button>
                                 </div>
                             </div>
