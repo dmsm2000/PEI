@@ -50,13 +50,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <xsl:for-each select="all">
+                        <xsl:for-each select="all//PRODUCT">
                             <tr>
                                 <td>
                                     <xsl:value-of select="SALE_INFO/ID"/>
                                 </td>
                                 <td>
-                                    <xsl:value-of select="PRODUCT/NAME"/>
+                                    <xsl:value-of select="PRODUCT_INFO/NAME"/>
                                 </td>
                                 <td>
                                     <xsl:value-of select="SALE_INFO/@type"/>

@@ -185,8 +185,8 @@ declare
 %rest:GET
 function page:getHTMLVendasAtivas(){
 let $r := <all>{
-for $sale in db:open("BuyTeckDB")//PRODUCT/SALE_INFO
-where $sale/@status = "active"
+for $sale in db:open("BuyTeckDB")//PRODUCT
+where $sale/SALE_INFO/@status = "active"
 return $sale
 }</all>
 let $style := doc("../xsl/html_transform_ActiveSales.xsl")
