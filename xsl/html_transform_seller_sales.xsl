@@ -46,6 +46,7 @@
                             <th scope="col">SALE TYPE</th>
                             <th scope="col">STATUS</th>
                             <th scope="col">PRODUCT</th>
+                            <th scope="col">PRICE</th>
                             <th scope="col">START DATE</th>
                             <th scope="col">END DATE</th>
                         </tr>
@@ -63,6 +64,9 @@
                             </td>
                             <td>
                                 <xsl:value-of select="PRODUCT_INFO/NAME"/>
+                            </td>
+                            <td>
+                                <xsl:value-of select="SALE_INFO/PRICE"/>
                             </td>
                             <td>
                                 <xsl:value-of select="SALE_INFO/START_DATE"/>

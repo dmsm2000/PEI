@@ -75,6 +75,7 @@
                 
                 <SALE_INFO type="auction" status="canceled">
                     <ID>2</ID>
+                    <PRICE>1.8</PRICE>
                     <MIN_BID>10</MIN_BID> <!-- Incremento mínimo -->
                     <STARTING_PRICE>12</STARTING_PRICE> <!-- Preço base -->
                     <BUY_NOW>100</BUY_NOW> <!-- Se aplicável, valor de compra instantânea -->

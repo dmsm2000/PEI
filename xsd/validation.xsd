@@ -102,7 +102,7 @@
                                                     <xs:element name="ID" type="xs:integer" minOccurs="1" maxOccurs="1"></xs:element>
                                                     <xs:element name="MIN_BID" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
                                                     <xs:element name="STARTING_PRICE" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
-                                                    <xs:element name="PRICE" minOccurs="0" maxOccurs="1" type="xs:float"></xs:element>
+                                                    <xs:element name="PRICE" minOccurs="1" maxOccurs="1" type="xs:float"></xs:element>
                                                     <xs:element name="BUY_NOW" type="xs:float" minOccurs="0" maxOccurs="1"></xs:element>
                                                     <xs:element name="START_DATE" type="xs:date" minOccurs="1" maxOccurs="1"></xs:element>
                                                     <xs:element name="END_DATE" type="xs:date" minOccurs="1" maxOccurs="1"></xs:element>

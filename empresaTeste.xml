@@ -83,6 +83,7 @@
                 <ID>01</ID>
                 <MIN_BID>10</MIN_BID> <!-- Incremento mínimo -->
                 <STARTING_PRICE>12</STARTING_PRICE> <!-- Preço base -->
+                <PRICE>1.8</PRICE>
                 <BUY_NOW>100</BUY_NOW> <!-- Se aplicável, valor de compra instantânea -->
                 <START_DATE>2020-11-11</START_DATE>
                 <END_DATE>2020-11-11</END_DATE>
