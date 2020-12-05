@@ -8,7 +8,7 @@ declare %updating
 %rest:POST("{$body}")
 function page:addToDatabase($body as document-node()) {
 
-let $schema := doc("../xsd/teste.xsd")
+let $schema := doc("../xsd/validation.xsd")
 
 let $res := validate:xsd-report($body, $schema)
 

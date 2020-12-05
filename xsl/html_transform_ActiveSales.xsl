@@ -37,27 +37,35 @@
             </header>
             
             <body>
-                <h2>Number of Active Salles: <span class="whiteSpace"><xsl:value-of select="count(all//SALE_INFO)"/></span>
+                <h2>Number of Active Sales: <span class="whiteSpace"><xsl:value-of select="count(all//SALE_INFO)"/></span>
                 </h2>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">UID</th>
+                            <th scope="col">PRODUCT</th>
+                            <th scope="col">SALE TYPE</th>
                             <th scope="col">START DATE</th>
                             <th scope="col">END DATE</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <xsl:for-each select="all//SALE_INFO">
+                        <xsl:for-each select="all">
                             <tr>
                                 <td>
-                                    <xsl:value-of select="ID"/>
+                                    <xsl:value-of select="SALE_INFO/ID"/>
                                 </td>
                                 <td>
-                                    <xsl:value-of select="START_DATE"/>
+                                    <xsl:value-of select="PRODUCT/NAME"/>
                                 </td>
                                 <td>
-                                    <xsl:value-of select="END_DATE"/>
+                                    <xsl:value-of select="SALE_INFO/@type"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="SALE_INFO/START_DATE"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="SALE_INFO/END_DATE"/>
                                 </td>
                             </tr>
                         </xsl:for-each>

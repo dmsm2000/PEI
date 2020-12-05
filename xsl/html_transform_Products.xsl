@@ -42,7 +42,6 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">SALE TYPE</th>
                             <th scope="col">PRODUCT</th>
                             <th scope="col">BRAND</th>
                             <th scope="col">STOCK</th>
@@ -51,9 +50,6 @@
                     </thead>
                     <xsl:for-each select="//DOCUMENT//PRODUCT">
                         <tr>
-                            <td>
-                                <xsl:value-of select="SALE_INFO/@type"/>
-                            </td>
                             <td>
                                 <xsl:value-of select="PRODUCT_INFO/NAME"/>
                             </td>
