@@ -29,7 +29,7 @@ where $doc/SELLER/UID = $seller
 return <all>{$doc/PRODUCTS/PRODUCT/PRODUCT_INFO}</all>
 };
 
-(: Retorna todos os negócios de um certo vendedor :)
+(: Retorna todos os negócios ativos de um certo vendedor :)
 
 declare
 %rest:path("/getsales")
